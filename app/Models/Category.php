@@ -20,7 +20,7 @@ class Category extends Model
     public function user() {
         $this->belongsTo(User::class);
     }
-    public function categories() {
+    public function tasks() {
         $this->hasMany(Task::class);
     }
 }
