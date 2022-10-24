@@ -27,7 +27,9 @@
                         <h2> Progresso do Dia </h2>
                         <div class="graph_header-line"></div>
                         <div class="graph_header-date">
-                            Data
+                            <img src="/assets/images/icon-prev.png"/>
+                                13 de Dez
+                            <img src="/assets/images/icon-next.png"/>
                         </div>
                     </div>
                     <div class="graph_header-subtitle">
@@ -48,24 +50,6 @@
                         </select>
                     </div>
                     <div class="task_list">
-                        <div class="task">
-                            <div class="title">
-                                <input type="checkbox"/>
-                                <div class="task_title"> Título da tarefa </div>
-                            </div>
-                            <div class="priority">
-                                <div class="sphere"> </div>
-                                <div> Título da tarefa </div>
-                            </div>
-                            <div class="actions">
-                                <a href="#">
-                                    <img src="/assets/images/icon-edit.png" />
-                                </a>
-                                <a href="#">
-                                    <img src="/assets/images/icon-delete.png" />
-                                </a>
-                            </div>
-                        </div>
                         <div class="task">
                             <div class="title">
                                 <input type="checkbox"/>
