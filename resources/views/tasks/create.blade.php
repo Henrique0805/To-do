@@ -7,31 +7,17 @@
     <section id="create_task_section">
         <h1>Criar Tarefa</h1>
         <form>
+            <x-form.text_input name="title" label="Titulo da task" placeholder="Digite o título da sua task"
+            required="required"/>
+            <x-form.text_input type="date" name="due_date" label="Data de Realização"
+            placeholder="Digite o título da sua task" required="required"/>
+            <x-form.select_input name="category" label="Categoria" placeholder="Digite o título da sua task">
+                <option>Valor 1</option>
+            </x-form.select_input>
+            <x-form.textarea_input name="description" placeholder="Digite a descrição da tarefa"/>
             <div class="inputArea">
-                <label for="title">
-                    Título da Task
-                </label>
-                <input id="title" name="title" placeholder="Digite o título da tarefa" required />
-            </div>
-            <div class="inputArea">
-                <label for="due_date">
-                    Data de Realização
-                </label>
-                <input type="date" id="due_date" name="due_date" placeholder="Digite o título da tarefa" required />
-            </div>
-            <div class="inputArea">
-                <label for="category">
-                    Categoria
-                </label>
-                <select id="category" name="category" required>
-                    <option selected disabled value="">Selecione a categoria</option>
-                </select>
-            </div>
-            <div class="inputArea">
-                <label for="description">
-                    Descrição de tarefa
-                </label>
-                <textarea id="description" name="description" placeholder="Digite uma descrição para sua tarefa" ></textarea>
+                <button type="reset" class="btn">Resetar</button>
+                <button type="submit" class="btn btn-primary">Criar tarefa</button>
             </div>
         </form>
     </section>
