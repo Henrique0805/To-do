@@ -14,11 +14,9 @@
             <x-form.select_input name="category" label="Categoria" placeholder="Digite o título da sua task">
                 <option>Valor 1</option>
             </x-form.select_input>
-            <x-form.textarea_input name="description" placeholder="Digite a descrição da tarefa"/>
-            <div class="inputArea">
-                <button type="reset" class="btn">Resetar</button>
-                <button type="submit" class="btn btn-primary">Criar tarefa</button>
-            </div>
+            <x-form.textarea_input label="Descrição da tarefa" name="description"
+            placeholder="Digite a descrição da tarefa"/>
+            <x-form.form_button resetTxt="Resetar" submitTxt="Criar tarefa"></x-form.form_button>
         </form>
     </section>
 </x-layout>
