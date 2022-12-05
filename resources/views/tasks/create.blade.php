@@ -6,13 +6,16 @@
     </x-slot:btn>
     <section id="create_task_section">
         <h1>Criar Tarefa</h1>
-        <form>
+        <form method="POST" action="{{route('task.create_action')}}">
+            @csrf
             <x-form.text_input name="title" label="Titulo da task" placeholder="Digite o título da sua task"
             required="required"/>
             <x-form.text_input type="date" name="due_date" label="Data de Realização"
             placeholder="Digite o título da sua task" required="required"/>
-            <x-form.select_input name="category" label="Categoria" placeholder="Digite o título da sua task">
-                <option>Valor 1</option>
+            <x-form.select_input name="category_id" label="Categoria" placeholder="Digite o título da sua task">
+            @foreach ($categories as $category)
+                <option value="{{$category->id}}">{{$category->title}}</option>
+            @endforeach
             </x-form.select_input>
             <x-form.textarea_input label="Descrição da tarefa" name="description"
             placeholder="Digite a descrição da tarefa"/>
