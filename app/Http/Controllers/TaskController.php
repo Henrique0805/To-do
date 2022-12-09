@@ -24,7 +24,21 @@ class TaskController extends Controller
         return redirect(route('home'));
     }
     public function edit(Request $request) {
-        return view('tasks.edit');
+
+        $id = $request->id;
+        $task = Task::find($id);
+        if(!$task) {
+            return redirect(route('home'));
+        }
+        $data['task'] = $task;
+
+        $categories = Category::all();
+        $data['categories'] = $categories;
+
+        return view('tasks.edit', $data);
+    }
+    public function edit_action(Request $request) {
+        return 'ok';
     }
     public function delete(Request $request) {
         return redirect(route('home'));
