@@ -4,11 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
     public function index(Request $request) {
         return view('login');
+    }
+    public function login_action(Request $request) {
+        $validator = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+        dd($validator);
     }
     public function register(Request $request) {
         return view('register');
@@ -22,6 +30,7 @@ class AuthController extends Controller
         ]);
 
         $data = $request->only('name','email','password');
+        $data['password'] = Hash::make($data['password']);
 
         User::create($data);
 
