@@ -49,14 +49,23 @@
 <script>
     function changeTaskStatusFilter(e) {
         if(e.value == 'task_pending') {
+            showAllTasks();
             document.querySelectorAll('.task_done').forEach(function(element) {
-                element.style.display = 'nome';
+                element.style.display = 'none';
             })
         } else if (e.value == 'task_done') {
+            showAllTasks();
             document.querySelectorAll('.task_pending').forEach(function(element) {
-                element.style.display = 'nome';
+                element.style.display = 'none';
             })
+        } else {
+            showAllTasks();
         }
+    }
+    function showAllTasks() {
+        document.querySelectorAll('.task').forEach(function(element) {
+                element.style.display = 'block';
+            })
     }
 </script>
 <script>
